@@ -35,11 +35,11 @@ open_jira_issue () {
   else
     echo "Opening issue #$1"
     if [[ "x$JIRA_RAPID_BOARD" = "xtrue" ]]; then
-      $open_cmd  "$jira_url/issues/$1"
+      $open_cmd  "$jira_url/issues/$1" > /dev/null
     else
-      $open_cmd  "$jira_url/browse/$1"
+      $open_cmd  "$jira_url/browse/$1" > /dev/null
     fi
   fi
 }
 
-alias jira='open_jira_issue'
+alias j='open_jira_issue'
